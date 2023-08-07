@@ -1,0 +1,23 @@
+.container label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.container select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background: #FFF;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    outline: none;
+}
+
+.container option{
+    font-size: 1rem;
+}
