@@ -25,7 +25,7 @@ const Form = () => {
     <section className={styles.container} >
         <form onSubmit={handleSubmit}>
             <h2>Preencha os dados para criar o card do Livro.</h2>
-            <Field label="Título" placeholder="Digite seu nome"/>
+            <Field must={true} label="Título" placeholder="Digite seu nome"/>
             <Field label="Autor" placeholder="Digite o nome do autor "/>
             <Field label="Imagem"placeholder="Digite o endreço da imagem"/>
             <DropdownList label="Categoria" itens={livros}/>

@@ -5,7 +5,7 @@
 
 }
 
-.container__form{
+.container form{
     max-width: 80%;
     background-color: var(--gray);
     border-radius: 20px;
