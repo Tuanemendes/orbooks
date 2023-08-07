@@ -1,0 +1,16 @@
+.container button{
+    padding: 18px;
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.container button:hover{
+    color: var(--green-light);
+    transform: translate(0, -2px);
+}
