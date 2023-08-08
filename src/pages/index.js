@@ -2,10 +2,20 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Banner from '@/components/Banner'
 import Form from '@/components/Form'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [books,setBooks] = useState([])
+
+  const newBooks = (book) => {
+    console.log(book)
+    setBooks([...books,book])
+  
+  }
+
   return (
     <>
       <Head>
@@ -15,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
-      <Form/>
+      <Form registeredBooks={book => newBooks(book)}/>
     
     </>
   )
