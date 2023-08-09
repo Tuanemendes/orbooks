@@ -7,20 +7,11 @@ import React, { useState } from 'react'
 
 const Form = (props) => {
 
-  const livros = [
-    '',
-    'Front-end',
-    'Back-end',
-    'Mobile',
-    'DevOps',
-    'Gestão',
-    'Ux Design'
-  ]
 
   const [name,setName] = useState('')
   const [actor,setActor] = useState('')
   const [image,setImage] = useState('')
-  const [category,setCategory] = useState('')
+  const [categoryBooks,setCategoryBooks] = useState('')
 
 
   const handleSubmit = (event) => {
@@ -57,9 +48,9 @@ const Form = (props) => {
             <DropdownList 
               must={true} 
               label="Categoria" 
-              itens={livros}
-              valueField={category}
-              changedField={valueField => setCategory(valueField)}
+              itens={props.categoriesName}
+              valueField={categoryBooks}
+              changedField={valueField => setCategoryBooks(valueField)}
               />
             <ButtonAdd>
               Criar Card

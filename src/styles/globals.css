@@ -1,7 +1,26 @@
 :root {
+  /* main colors */
   --blue:#6278F7;
   --gray:#F2F2F2;
   --green-light:#95FFD4;
+
+  /* backgrounds cards */
+  --bg-green-light: #D9F7E9;
+  --bg-blue-light:#E8F8FF;
+  --bg-green-light2:#F0F8E2;
+  --bg-red-light:#FDE7E8;
+  --bg-pink-light:#FAE9F5;
+  --bg-yellow-light:#FFF5D9;
+  --bg-orange-light :#FFEEDF;
+
+  /* Detach cards */
+  --d-green:#57C278;
+  --d-blue:#82CFFA;
+  --d-green2 :#A6D157;
+  --d-red:#E06B69;
+  --d-pink:#DB6EBF;
+  --d-yellow:#FFBA05;
+  --d-orange:#FF8A29;
 
   
 }
