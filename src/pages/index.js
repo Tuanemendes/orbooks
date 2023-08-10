@@ -12,43 +12,43 @@ export default function Home() {
   const categories =[
     {
       id: 1,
-      category: 'Front-end',
+      categoryType: 'Front-end',
       primaryColor: 'var(--d-green)',
       secondaryColor: 'var(--bg-green-light)'
     },
     {
       id: 2,
-      category: 'Back-end',
+      categoryType: 'Back-end',
       primaryColor: 'var(--d-blue)',
       secondaryColor: 'var(--bg-blue-light)'
     },
     {
       id: 3,
-      category: 'Mobile',
+      categoryType: 'Mobile',
       primaryColor: 'var(--d-green2)',
       secondaryColor: 'var(--bg-green-light2)'
     },
     {
       id: 4,
-      category: 'DevOps',
+      categoryType: 'DevOps',
       primaryColor: 'var(--d-red)',
       secondaryColor: 'var(--bg-red-light)'
     },
     {
       id: 5,
-      category: 'Ux Design',
+      categoryType: 'Ux Design',
       primaryColor: 'var(--d-pink)',
       secondaryColor: 'var(--bg-pink-light)'
     },
     {
       id: 6,
-      category: 'Data Science',
+      categoryType: 'Data Science',
       primaryColor: 'var(--d-yellow)',
       secondaryColor: 'var(--bg-yellow-light)'
     },
     {
       id: 7,
-      category: 'Inovação e Gestão',
+      categoryType: 'Inovação e Gestão',
       primaryColor: 'var(--d-orange)',
       secondaryColor: 'var(--bg-orange-light)'
     },
@@ -71,10 +71,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
-      <Form categoriesName={categories.map(category => category.category)} registeredBooks={book => newBooks(book)}/>
-      {categories.map( category => <Category key={category.id} name={ category.category} primaryColor={category.primaryColor} secondaryColor={category.secondaryColor} />)}
-        
-    
+      <Form categoriesName={categories.map(category => category.categoryType)} registeredBooks={book => newBooks(book)}/>
+      {categories.map( category => <Category 
+        key={category.id} 
+        name={ category.categoryType} 
+        primaryColor={category.primaryColor} 
+        secondaryColor={category.secondaryColor}
+        books={books.filter(book => book.categoryBooks === category.categoryType)}
+       />)}
     </>
   )
 }

@@ -16,7 +16,16 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.registeredBooks({name,actor,image,category})
+    props.registeredBooks({
+      name,
+      actor,
+      image,
+      categoryBooks
+    })
+    setName('')
+    setActor('')
+    setImage('')
+    setCategoryBooks('')
   }
 
 
