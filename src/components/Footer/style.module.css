@@ -1,0 +1,29 @@
+.container{
+    background-color: var(--blue);
+    color:#FFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.container .social{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.container .social a{
+    margin-right: 10px;
+}
+
+.container .logo{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.container .logo h3{
+    padding-left: 5px;
+}
+

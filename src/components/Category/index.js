@@ -11,7 +11,8 @@ const Category = (props) => {
     props.books.length > 0 && <section className={styles.container} style={bgSecondaryColor}>
         <h3 style={dPrimaryColor}>{props.name}</h3>
         <div className={styles.books}>
-        {props.books.map(book => <CardBook 
+        {props.books.map(book => <CardBook
+          bgColor={props.primaryColor} 
           key={book.idBook} 
           name={book.name} 
           actor={book.actor}

@@ -4,6 +4,7 @@ import Banner from '@/components/Banner'
 import Form from '@/components/Form'
 import { useState } from 'react'
 import Category from '@/components/Category'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -57,9 +58,7 @@ export default function Home() {
   const [books,setBooks] = useState([])
 
   const newBooks = (book) => {
-    console.log(book)
     setBooks([...books,book])
-  
   }
 
   return (
@@ -79,6 +78,7 @@ export default function Home() {
         secondaryColor={category.secondaryColor}
         books={books.filter(book => book.categoryBooks === category.categoryType)}
        />)}
+       <Footer/>
     </>
   )
 }

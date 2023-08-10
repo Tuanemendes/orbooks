@@ -2,12 +2,12 @@ import React from 'react'
 import styles from './style.module.css'
 
 
-const CardBook = ({image, name, actor}) => {
+const CardBook = ({image, name, actor,bgColor}) => {
 
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
+      <div className={styles.header} style={{backgroundColor:bgColor}}>
         <img src={image} alt={name}></img>
         {/* <Image 
           src='https://m.media-amazon.com/images/I/51wX6cd1iiL._SY344_BO1,204,203,200_QL70_ML2_.jpg' 
