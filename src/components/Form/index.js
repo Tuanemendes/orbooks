@@ -48,7 +48,7 @@ const Form = (props) => {
               changedField={valueField => setActor(valueField)}
             />
             <Field 
-              must={true} 
+              must={false} 
               label="Imagem"
               placeholder="Digite o endreço da imagem"
               valueField={image}

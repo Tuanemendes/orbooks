@@ -6,7 +6,7 @@ import { useState } from 'react'
 import Category from '@/components/Category'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
 
