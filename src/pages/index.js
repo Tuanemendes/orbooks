@@ -61,6 +61,10 @@ export default function Home() {
     setBooks([...books,book])
   }
 
+  function deleteBook(){
+    console.log('deletado')
+  }
+
   return (
     <>
       <Head>
@@ -71,12 +75,14 @@ export default function Home() {
       </Head>
       <Banner/>
       <Form categoriesName={categories.map(category => category.categoryType)} registeredBooks={book => newBooks(book)}/>
-      {categories.map( category => <Category 
-        key={category.id} 
-        name={ category.categoryType} 
-        primaryColor={category.primaryColor} 
-        secondaryColor={category.secondaryColor}
-        books={books.filter(book => book.categoryBooks === category.categoryType)}
+      {categories.map( category => 
+        <Category 
+          key={category.id} 
+          name={ category.categoryType} 
+          primaryColor={category.primaryColor} 
+          secondaryColor={category.secondaryColor}
+          books={books.filter(book => book.categoryBooks === category.categoryType)}
+          byDelete={deleteBook}
        />)}
        <Footer/>
     </>
