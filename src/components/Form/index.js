@@ -13,10 +13,16 @@ const Form = (props) => {
   const [image,setImage] = useState('')
   const [categoryBooks,setCategoryBooks] = useState('')
 
+  const generateUniqueId = () => {
+    const randomString = Math.random().toString(36).slice(2, 11);
+    return randomString;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    const idBook = generateUniqueId();
     props.registeredBooks({
+      idBook,
       name,
       actor,
       image,
@@ -48,9 +54,9 @@ const Form = (props) => {
               changedField={valueField => setActor(valueField)}
             />
             <Field 
-              must={true} 
+              must={false} 
               label="Imagem"
-              placeholder="Digite o endreço da imagem"
+              placeholder="Endereço de imagem permitido 'm.media-amazon.com' "
               valueField={image}
               changedField={valueField => setImage(valueField)}
             />
