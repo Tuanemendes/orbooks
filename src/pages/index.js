@@ -5,6 +5,7 @@ import Form from '@/components/Form'
 import { useState } from 'react'
 import Category from '@/components/Category'
 import Footer from '@/components/Footer'
+import styles from './style.module.css'
 
 
 
@@ -55,11 +56,41 @@ export default function Home() {
     },
   ]
 
-  const [books,setBooks] = useState([])
+  const booksList = [
+    {
+      idBook: 1,
+      name: 'React',
+      actor: 'Facebook',
+      image: '',
+      categoryBooks: 'Front-end'
+    },
+    {
+      idBook: 2,
+      name: 'React Native',
+      actor: 'Facebook',
+      image: '',
+      categoryBooks: 'Mobile'
+    },
+    {
+      idBook: 3,
+      name: 'React',
+      actor: 'Facebook',
+      image: '',
+      categoryBooks: 'Front-end'
+    },
+    {
+      idBook: 4,
+      name: 'React Native',
+      actor: 'Facebook',
+      image: '',
+      categoryBooks: 'Mobile'
+    },
+  ]
+  const [books,setBooks] = useState(booksList)
 
-  const newBooks = (book) => {
-    setBooks([...books,book])
-  }
+  // const newBooks = (book) => {
+  //   setBooks([...books,book])
+  // }
 
   function deleteBook(){
     console.log('deletado')
@@ -74,16 +105,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
-      <Form categoriesName={categories.map(category => category.categoryType)} registeredBooks={book => newBooks(book)}/>
-      {categories.map( category => 
+      <Form categoriesName={categories.map(category => category.categoryType)} registeredBooks={book => setBooks([...books,book])}/>
+      {/* book => newBooks(book) */}
+      <section className={styles.container}>
+        <h2>Meus livros</h2>
+        {categories.map( category => 
         <Category 
           key={category.id} 
-          name={ category.categoryType} 
-          primaryColor={category.primaryColor} 
-          secondaryColor={category.secondaryColor}
+          category={category}
           books={books.filter(book => book.categoryBooks === category.categoryType)}
           byDelete={deleteBook}
        />)}
+      </section>
+      
        <Footer/>
     </>
   )
