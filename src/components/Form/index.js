@@ -5,13 +5,13 @@ import styles from './style.module.css'
 
 import React, { useState } from 'react'
 
-const Form = (props) => {
+const Form = (categories, registeredBooks) => {
 
 
   const [name,setName] = useState('')
   const [actor,setActor] = useState('')
   const [image,setImage] = useState('')
-  const [categoryBooks,setCategoryBooks] = useState('')
+  const [category,setCategory] = useState('')
 
   const generateUniqueId = () => {
     const randomString = Math.random().toString(36).slice(2, 11);
@@ -21,17 +21,17 @@ const Form = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const idBook = generateUniqueId();
-    props.registeredBooks({
+    registeredBooks({
       idBook,
       name,
       actor,
       image,
-      categoryBooks
+      category
     })
     setName('')
     setActor('')
     setImage('')
-    setCategoryBooks('')
+    setCategory('')
   }
 
 
@@ -63,9 +63,9 @@ const Form = (props) => {
             <DropdownList 
               must={true} 
               label="Categoria" 
-              itens={props.categoriesName}
-              valueField={categoryBooks}
-              changedField={valueField => setCategoryBooks(valueField)}
+              itens={categories.categoriesName}
+              valueField={category}
+              changedField={valueField => setCategory(valueField)}
               />
             <ButtonAdd>
               Criar Card

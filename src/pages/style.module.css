@@ -1,0 +1,14 @@
+
+
+.container{
+    text-align: center;
+}
+
+.container h3 {
+    font-size: 32px;
+    font-family: 'Prata';
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+  
