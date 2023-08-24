@@ -11,7 +11,7 @@ import styles from './style.module.css'
 
 export default function Home() {
 
-  const categories =[
+  const [categories,setCategories] = useState([
     {
       id: 1,
       categoryType: 'Front-end',
@@ -54,7 +54,7 @@ export default function Home() {
       primaryColor: 'var(--d-orange)',
       secondaryColor: 'var(--bg-orange-light)'
     },
-  ]
+  ])
 
   const booksList = [
     {
@@ -96,6 +96,15 @@ export default function Home() {
     console.log('deletado')
   }
 
+  function updatacolorCategory(color,name){
+    setCategories(categories.map(category =>{
+      if(category.categoryType === name){
+        category.primaryColor = color
+      }
+      return category
+    }))
+    
+  }
   return (
     <>
       <Head>
@@ -111,6 +120,7 @@ export default function Home() {
         <h2>Meus livros</h2>
         {categories.map( category => 
         <Category 
+          updateColor={updatacolorCategory}
           key={category.id} 
           category={category}
           books={books.filter(book => book.categoryBooks === category.categoryType)}
