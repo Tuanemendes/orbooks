@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import Banner from '@/components/Banner'
 import Form from '@/components/Form'
 import { useState } from 'react'
@@ -9,50 +8,44 @@ import styles from './style.module.css'
 
 
 
+
 export default function Home() {
 
   const [categories,setCategories] = useState([
     {
       id: 1,
       categoryType: 'Front-end',
-      primaryColor: 'var(--d-green)',
-      secondaryColor: 'var(--bg-green-light)'
+      color: '#57C278',
     },
     {
       id: 2,
       categoryType: 'Back-end',
-      primaryColor: 'var(--d-blue)',
-      secondaryColor: 'var(--bg-blue-light)'
+      color: '#82CFFA',
     },
     {
       id: 3,
       categoryType: 'Mobile',
-      primaryColor: 'var(--d-green2)',
-      secondaryColor: 'var(--bg-green-light2)'
+      color: '#A6D157',
     },
     {
       id: 4,
       categoryType: 'DevOps',
-      primaryColor: 'var(--d-red)',
-      secondaryColor: 'var(--bg-red-light)'
+      color: '#E06B69',
     },
     {
       id: 5,
       categoryType: 'Ux Design',
-      primaryColor: 'var(--d-pink)',
-      secondaryColor: 'var(--bg-pink-light)'
+      color: '#DB6EBF',
     },
     {
       id: 6,
       categoryType: 'Data Science',
-      primaryColor: 'var(--d-yellow)',
-      secondaryColor: 'var(--bg-yellow-light)'
+      color: '#FFBA05',
     },
     {
       id: 7,
       categoryType: 'Inovação e Gestão',
-      primaryColor: 'var(--d-orange)',
-      secondaryColor: 'var(--bg-orange-light)'
+      color: '#FF8A29',
     },
   ])
 
@@ -99,7 +92,7 @@ export default function Home() {
   function updatacolorCategory(color,name){
     setCategories(categories.map(category =>{
       if(category.categoryType === name){
-        category.primaryColor = color
+        category.color = color
       }
       return category
     }))
@@ -119,7 +112,7 @@ export default function Home() {
       <section className={styles.container}>
         <h2>Meus livros</h2>
         {categories.map( category => 
-        <Category 
+        <Category
           updateColor={updatacolorCategory}
           key={category.id} 
           category={category}
