@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Category from '@/components/Category'
 import Footer from '@/components/Footer'
 import styles from './style.module.css'
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -13,37 +14,37 @@ export default function Home() {
 
   const [categories,setCategories] = useState([
     {
-      id: 1,
+      id: uuidv4(),
       categoryType: 'Front-end',
       color: '#57C278',
     },
     {
-      id: 2,
+      id: uuidv4(),
       categoryType: 'Back-end',
       color: '#82CFFA',
     },
     {
-      id: 3,
+      id: uuidv4(),
       categoryType: 'Mobile',
       color: '#A6D157',
     },
     {
-      id: 4,
+      id: uuidv4(),
       categoryType: 'DevOps',
       color: '#E06B69',
     },
     {
-      id: 5,
+      id: uuidv4(),
       categoryType: 'Ux Design',
       color: '#DB6EBF',
     },
     {
-      id: 6,
+      id: uuidv4(),
       categoryType: 'Data Science',
       color: '#FFBA05',
     },
     {
-      id: 7,
+      id: uuidv4(),
       categoryType: 'Inovação e Gestão',
       color: '#FF8A29',
     },
@@ -51,28 +52,28 @@ export default function Home() {
 
   const booksList = [
     {
-      idBook: 1,
+      idBook: uuidv4(),
       name: 'React',
       actor: 'Facebook',
       image: '',
       categoryBooks: 'Front-end'
     },
     {
-      idBook: 2,
+      idBook: uuidv4(),
       name: 'React Native',
       actor: 'Facebook',
       image: '',
       categoryBooks: 'Mobile'
     },
     {
-      idBook: 3,
+      idBook: uuidv4(),
       name: 'React',
       actor: 'Facebook',
       image: '',
       categoryBooks: 'Front-end'
     },
     {
-      idBook: 4,
+      idBook: uuidv4(),
       name: 'React Native',
       actor: 'Facebook',
       image: '',
@@ -89,9 +90,9 @@ export default function Home() {
     console.log('deletado')
   }
 
-  function updatacolorCategory(color,name){
+  function updatacolorCategory(color,id){
     setCategories(categories.map(category =>{
-      if(category.categoryType === name){
+      if(category.id === id){
         category.color = color
       }
       return category

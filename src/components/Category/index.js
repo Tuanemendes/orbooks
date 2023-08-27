@@ -7,7 +7,7 @@ const Category = ({category, books,byDelete,updateColor }) => {
 
   // const [color,setColor] = useState(category.primaryColor)
   const handleChange = (event) => {
-    updateColor(event.target.value, category.categoryType)
+    updateColor(event.target.value, category.id)
   }
   return (
     books.length > 0 && (
