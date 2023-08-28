@@ -86,8 +86,8 @@ export default function Home() {
   //   setBooks([...books,book])
   // }
 
-  function deleteBook(){
-    console.log('deletado')
+  function deleteBook(idBook){
+    setBooks(books.filter(book => book.idBook !== idBook))
   }
 
   function updatacolorCategory(color,id){
