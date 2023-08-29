@@ -11,11 +11,8 @@ const CardBook = ({book,bgColor,byDelete}) => {
 
   return (
     <div className={styles.container}>
-      <AiFillCloseCircle 
-        size={20} 
-        className={styles.delete} 
-        onClick={() => byDelete(book.idBook)}
-      />
+      <AiFillCloseCircle size={20} className={styles.delete} onClick={() => byDelete(book.idBook)}/>
+
       <div className={styles.header} style={{backgroundColor:bgColor}}>
         <Image src={imageSrc} alt={book.name} quality={100} 
         priority={true} width={100} height={200} />

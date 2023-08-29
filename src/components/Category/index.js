@@ -19,10 +19,8 @@ const Category = ({category, books,byDelete,updateColor }) => {
             return (
               <CardBook
               key={book.idBook}
+              book={book}
               bgColor={category.color}
-              name={book.name}
-              actor={book.actor}
-              image={book.image}
               byDelete={byDelete}
             />
             )
