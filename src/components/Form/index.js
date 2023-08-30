@@ -5,13 +5,15 @@ import styles from './style.module.css'
 
 import React, { useState } from 'react'
 
-const Form = (categories, registeredBooks) => {
+const Form = (categories, registeredBooks , registerCategory) => {
 
 
   const [name,setName] = useState('')
   const [actor,setActor] = useState('')
   const [image,setImage] = useState('')
   const [category,setCategory] = useState('')
+  const [nameCategory,setNameCategory] = useState('')
+  const [colorCategory,setColorCategory] = useState('')
 
   const generateUniqueId = () => {
     const randomString = Math.random().toString(36).slice(2, 11);
@@ -32,6 +34,18 @@ const Form = (categories, registeredBooks) => {
     setActor('')
     setImage('')
     setCategory('')
+  }
+  const newCategory = (event) => {
+    event.preventDefault()
+    console.log( registerCategory ({
+      nameCategory:nameCategory,
+       colorCategory:colorCategory
+      }))
+    // registerCategory({
+    //   nameCategory:nameCategory,
+    //   colorCategory:colorCategory
+    // })
+  
   }
 
 
@@ -69,6 +83,26 @@ const Form = (categories, registeredBooks) => {
               />
             <ButtonAdd>
               Criar Card
+            </ButtonAdd>
+        </form>
+        <form onSubmit={newCategory}>
+            <h2>Adicionar categoria.</h2>
+            <Field 
+              must={true} 
+              label="Nome da Categoria" 
+              placeholder="Digite o nome da categoria"
+              valueField={nameCategory}
+              changedField={valueField => setNameCategory(valueField)}
+            />
+            <Field 
+              must={true} 
+              label="Cor" 
+              placeholder="Digite a cor da categoria "
+              valueField={colorCategory}
+              changedField={valueField => setColorCategory(valueField)}
+            />
+            <ButtonAdd>
+              Adicionar 
             </ButtonAdd>
         </form>
     </section>

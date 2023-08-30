@@ -99,6 +99,10 @@ export default function Home() {
     }))
     
   }
+
+  function registerCategory(newCategory){
+    setCategories([...categories, {...newCategory, id: uuidv4() }])
+  }
   return (
     <>
       <Head>
@@ -108,7 +112,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
-      <Form categoriesName={categories.map(category => category.categoryType)} registeredBooks={book => setBooks([...books,book])}/>
+      <Form 
+        registerCategory={registerCategory}
+        categoriesName={categories.map(category => category.categoryType)} 
+        registeredBooks={book => setBooks([...books,book])}
+      />
       {/* book => newBooks(book) */}
       <section className={styles.container}>
         <h2>Meus livros</h2>
