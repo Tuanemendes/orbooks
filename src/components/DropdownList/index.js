@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './style.module.css'
 
-const DropdownList = (props) => {
+const DropdownList = ({label,items, valueField ,must=false, changedField}) => {
   return (
     <div className={styles.container}>
-       <label>{props.label}</label>
-       <select onChange={event => props.changedField(event.target.value)} required={props.must} value={props.valueField}>
+       <label>{label}</label>
+       <select onChange={event => changedField(event.target.value)} required={must} value={valueField}>
           <option value="">Selecione</option>
-            {props.itens.map(item => <option key={item}>{item}</option>)}
+            {items.map(item => <option key={item}>{item}</option>)}
        </select>
     </div>
   )

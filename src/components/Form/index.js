@@ -5,7 +5,7 @@ import styles from './style.module.css'
 
 import React, { useState } from 'react'
 
-const Form = (categories, registeredBooks , registerCategory) => {
+const Form = ({categories, registeredBooks , registerCategory}) => {
 
 
   const [name,setName] = useState('')
@@ -35,16 +35,14 @@ const Form = (categories, registeredBooks , registerCategory) => {
     setImage('')
     setCategory('')
   }
+
   const newCategory = (event) => {
     event.preventDefault()
-    console.log( registerCategory ({
+    console.log('oi')
+    registerCategory({
       nameCategory:nameCategory,
-       colorCategory:colorCategory
-      }))
-    // registerCategory({
-    //   nameCategory:nameCategory,
-    //   colorCategory:colorCategory
-    // })
+      colorCategory:colorCategory
+    })
   
   }
 
@@ -77,12 +75,12 @@ const Form = (categories, registeredBooks , registerCategory) => {
             <DropdownList 
               must={true} 
               label="Categoria" 
-              itens={categories.categoriesName}
+              items={categories}
               valueField={category}
               changedField={valueField => setCategory(valueField)}
               />
             <ButtonAdd>
-              Criar Card
+              Cadastrar
             </ButtonAdd>
         </form>
         <form onSubmit={newCategory}>
