@@ -100,7 +100,7 @@ const Form = ({categories, registeredBooks , registerCategory}) => {
               changedField={valueField => setColorCategory(valueField)}
             />
             <ButtonAdd>
-              Adicionar 
+            Add
             </ButtonAdd>
         </form>
     </section>
